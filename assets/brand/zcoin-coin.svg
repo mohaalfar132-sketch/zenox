@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="body" cx="38%" cy="30%" r="78%">
+      <stop offset="0%" stop-color="#3B2A78"/>
+      <stop offset="42%" stop-color="#211747"/>
+      <stop offset="100%" stop-color="#0A0D1F"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C4B5FD"/>
+      <stop offset="35%" stop-color="#8B5CF6"/>
+      <stop offset="65%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#5B35B6"/>
+    </linearGradient>
+
+    <!-- colored water: cyan -> indigo -> violet -> magenta -> aqua -->
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="24%" stop-color="#60A5FA"/>
+      <stop offset="46%" stop-color="#A78BFA"/>
+      <stop offset="64%" stop-color="#E879F9"/>
+      <stop offset="82%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#67E8F9"/>
+    </linearGradient>
+    <linearGradient id="waterDeep" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#0E7490" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#4C1D95" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#831843" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="waveCyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#67E8F9" stop-opacity="0"/>
+      <stop offset="22%" stop-color="#22D3EE" stop-opacity="0.9"/>
+      <stop offset="58%" stop-color="#818CF8" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#67E8F9" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="wavePink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C084FC" stop-opacity="0"/>
+      <stop offset="28%" stop-color="#E879F9" stop-opacity="0.85"/>
+      <stop offset="62%" stop-color="#A78BFA" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#F0ABFC" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="waveWhite" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.90"/>
+      <stop offset="38%" stop-color="#FFFFFF" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="caustic" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="26" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="waterRipple" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009 0.026" numOctaves="3" seed="9" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G" result="warp"/>
+      <feGaussianBlur in="warp" stdDeviation="7"/>
+    </filter>
+    <filter id="depth" x="-30%" y="-30%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+
+    <path id="topArc" d="M 232 512 A 280 280 0 0 1 792 512"/>
+    <path id="bottomArc" d="M 182 512 A 330 330 0 0 0 842 512"/>
+    <path id="zShape" d="M 360 292 H 676 Q 696 292 684 308 L 430 668 H 676 Q 696 668 696 688 V 740 Q 696 760 676 760 H 348 Q 328 760 340 744 L 594 384 H 348 Q 328 384 328 364 V 312 Q 328 292 348 292 Z"/>
+    <clipPath id="zClip"><use href="#zShape"/></clipPath>
+  </defs>
+
+  <!-- outer aura -->
+  <circle cx="512" cy="512" r="430" fill="#8B5CF6" opacity="0.18" filter="url(#soft)"/>
+  <circle cx="512" cy="512" r="395" fill="none" stroke="#2DD4BF" stroke-opacity="0.20" stroke-width="2"/>
+
+  <!-- coin rim -->
+  <circle cx="512" cy="512" r="372" fill="url(#body)" stroke="url(#rim)" stroke-width="12"/>
+  <circle cx="512" cy="512" r="350" fill="none" stroke="#0A0D1F" stroke-width="10" opacity="0.65"/>
+  <circle cx="512" cy="512" r="338" fill="none" stroke="#C4B5FD" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- top gloss -->
+  <path d="M 512 140 A 372 372 0 0 1 884 512 L 800 512 A 288 288 0 0 0 512 224 Z" fill="url(#shine)"/>
+
+  <!-- tick ring -->
+  <g stroke="#67E8F9" stroke-opacity="0.5" stroke-width="3">
+    <line x1="512" y1="182" x2="512" y2="206"/>
+    <line x1="182" y1="512" x2="206" y2="512"/>
+    <line x1="818" y1="512" x2="842" y2="512"/>
+  </g>
+
+  <circle cx="512" cy="512" r="300" fill="none" stroke="#8B5CF6" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="2 14"/>
+  <circle cx="512" cy="512" r="270" fill="none" stroke="#2DD4BF" stroke-opacity="0.30" stroke-width="2"/>
+
+  <text font-family="Verdana, DejaVu Sans, sans-serif" font-size="44" font-weight="700" fill="#C4B5FD" letter-spacing="14" text-anchor="middle">
+    <textPath href="#topArc" startOffset="50%">ZCOIN</textPath>
+  </text>
+  <text font-family="Verdana, DejaVu Sans, sans-serif" font-size="32" font-weight="700" fill="#67E8F9" letter-spacing="9" text-anchor="middle" opacity="0.95">
+    <textPath href="#bottomArc" startOffset="50%">ZENOX · 10</textPath>
+  </text>
+
+  <!-- soft colored pool behind the letter -->
+  <ellipse cx="512" cy="730" rx="230" ry="46" fill="#A78BFA" opacity="0.20" filter="url(#soft)"/>
+
+  <!-- 3D depth -->
+  <use href="#zShape" x="8" y="10" fill="#160C33" opacity="0.65" filter="url(#depth)"/>
+
+  <!-- liquid body -->
+  <g clip-path="url(#zClip)">
+    <rect x="300" y="270" width="430" height="520" fill="url(#water)"/>
+    <rect x="300" y="270" width="430" height="520" fill="url(#waterDeep)"/>
+
+    <!-- flowing colored water bands -->
+    <g filter="url(#waterRipple)" opacity="0.62">
+      <path d="M 300 365 C 390 320 470 445 560 392 C 640 346 690 425 740 392 L 740 470 C 660 505 620 430 540 475 C 450 522 380 435 300 478 Z" fill="url(#waveCyan)"/>
+      <path d="M 300 535 C 375 500 435 592 525 550 C 615 508 665 604 740 552 L 740 650 C 650 700 605 604 512 648 C 420 692 360 610 300 652 Z" fill="url(#wavePink)" opacity="0.9"/>
+      <path d="M 300 455 C 395 420 455 500 545 462 C 630 426 685 500 740 470 L 740 505 C 665 540 620 465 535 505 C 448 546 380 470 300 505 Z" fill="url(#waveWhite)" opacity="0.75"/>
+    </g>
+
+    <!-- caustic light -->
+    <circle cx="420" cy="410" r="115" fill="url(#caustic)" opacity="0.55" style="mix-blend-mode:screen"/>
+    <circle cx="625" cy="640" r="135" fill="url(#caustic)" opacity="0.35" style="mix-blend-mode:screen"/>
+
+    <!-- glass gloss -->
+    <path d="M 300 270 H 740 V 400 C 600 340 460 460 300 400 Z" fill="url(#gloss)" opacity="0.45"/>
+    <path d="M 328 292 H 676 L 600 380 H 360 Z" fill="#FFFFFF" opacity="0.12"/>
+    <path d="M 360 720 H 676 V 760 H 348 Z" fill="#0A0D1F" opacity="0.18"/>
+    <path d="M 590 390 L 430 690" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="5" filter="url(#soft)"/>
+    <path d="M 352 310 Q 430 296 540 300" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="6" filter="url(#soft)"/>
+  </g>
+
+  <!-- liquid rim / inner light -->
+  <use href="#zShape" fill="none" stroke="#FFFFFF" stroke-opacity="0.55" stroke-width="3"/>
+  <use href="#zShape" fill="none" stroke="#67E8F9" stroke-opacity="0.35" stroke-width="1.5" transform="translate(0,3)"/>
+
+  <!-- droplets -->
+  <g>
+    <path d="M 700 704 C 712 722 724 734 724 748 A 24 24 0 0 1 676 748 C 676 734 688 722 700 704 Z" fill="url(#water)" opacity="0.85"/>
+    <path d="M 694 724 C 700 734 706 740 706 748 A 12 12 0 0 1 682 748 C 682 740 688 734 694 724 Z" fill="#FFFFFF" opacity="0.35"/>
+    <circle cx="330" cy="690" r="15" fill="url(#water)" opacity="0.75"/>
+    <circle cx="326" cy="686" r="5" fill="#FFFFFF" opacity="0.5"/>
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#FFFFFF">
+    <path d="M 760 250 l 7 20 20 7 -20 7 -7 20 -7 -20 -20 -7 20 -7 z" opacity="0.85"/>
+    <path d="M 248 690 l 5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5 z" opacity="0.65"/>
+    <circle cx="806" cy="642" r="5" opacity="0.6"/>
+    <circle cx="214" cy="360" r="4" opacity="0.5"/>
+  </g>
+
+  <!-- inner shadow at bottom -->
+  <path d="M 512 884 A 372 372 0 0 0 884 512 L 812 512 A 300 300 0 0 1 512 812 Z" fill="#05070F" opacity="0.35"/>
+</svg>

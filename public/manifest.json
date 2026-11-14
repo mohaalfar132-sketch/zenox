@@ -1,0 +1,14 @@
+{
+  "name": "ZANOX",
+  "short_name": "ZANOX",
+  "description": "منصة ZANOX للمحادثة والبرمجة والتفاعل الصوتي",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0D1F",
+  "theme_color": "#0A0D1F",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    { "src": "/assets/images/icon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

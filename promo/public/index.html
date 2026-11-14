@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZANOX9.AI — مساعدك الذكي بالعربية</title>
+    <meta name="description" content="ZANOX9.AI منصة عربية للذكاء الاصطناعي: محادثة، سبعة أوضاع متخصصة، قراءة الملفات وتوليدها، وصور — على الويب وعلى أندرويد." />
+    <meta name="theme-color" content="#0a0710" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="google-site-verification" content="yj0jEkcrROTqccofep9lix_CvXasiukGnuJidAqTpp4" />
+    <link rel="canonical" href="https://site-46a89efcae814916890b8988f2f1d0dd.freebuff.page/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ZANOX9.AI" />
+    <meta property="og:locale" content="ar_AR" />
+    <meta property="og:url" content="https://site-46a89efcae814916890b8988f2f1d0dd.freebuff.page/" />
+    <meta property="og:title" content="ZANOX9.AI — مساعدك الذكي" />
+    <meta property="og:description" content="محادثة عربية، أوضاع متخصصة، ملفات وصور. نسخة ويب وتطبيق أندرويد." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ZANOX9.AI — مساعدك الذكي بالعربية" />
+    <meta name="twitter:description" content="محادثة عربية، أوضاع متخصصة، ملفات وصور. نسخة ويب وتطبيق أندرويد." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0710'/%3E%3Cpath d='M18 20h28L18 44h28' stroke='%23a855f7' stroke-width='7' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --bg: #0a0710;
+        --ink: #f2eef7;
+        --muted: #a99fb8;
+        --line: rgba(255, 255, 255, 0.10);
+        --line-soft: rgba(255, 255, 255, 0.06);
+        --acc: #a855f7;
+        --acc-soft: #c084fc;
+        --cta1: #f7c6ec;
+        --cta2: #e9a6ee;
+        --cta-ink: #0a0710;
+        --mono: "SF Mono", "JetBrains Mono", ui-monospace, monospace;
+        --r: 4px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; overflow-x: hidden; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: "Noto Kufi Arabic", "Tajawal", "Segoe UI", Tahoma, system-ui, sans-serif;
+        line-height: 1.7;
+        background: var(--bg);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; text-decoration: none; }
+      .shell { width: min(1280px, 94vw); margin: 0 auto; }
+
+      /* ---------- backdrop ---------- */
+      .backdrop { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+      .backdrop .glow { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.55; }
+      .backdrop .g1 { width: 720px; height: 720px; top: -260px; right: -180px; background: radial-gradient(circle, rgba(168, 85, 247, 0.34), transparent 62%); }
+      .backdrop .g2 { width: 520px; height: 520px; bottom: -200px; left: -160px; background: radial-gradient(circle, rgba(247, 198, 236, 0.18), transparent 62%); }
+      .backdrop .grid { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 78%); }
+
+      /* ---------- header ---------- */
+      header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(18px); background: rgba(10, 7, 16, 0.72); border-bottom: 1px solid var(--line); }
+      .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; }
+      .logo { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: 0.22em; font-size: 15px; }
+      .logo .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 14px var(--acc); }
+      .nav-links { display: flex; gap: 28px; font-size: 13px; color: var(--muted); }
+      .nav-links a:hover { color: var(--ink); }
+      @media (max-width: 760px) { .nav-links { display: none; } }
+      .pill { display: inline-flex; align-items: center; justify-content: center; padding: 9px 18px; border-radius: 999px; font-size: 13px; font-weight: 700; background: linear-gradient(135deg, var(--cta1), var(--cta2)); color: var(--cta-ink); transition: transform .18s ease, box-shadow .18s ease; }
+      .pill:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(247, 198, 236, 0.25); }
+
+      /* ---------- labels ---------- */
+      .kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 22px; }
+      .kicker .num { color: var(--acc-soft); }
+      .kicker .slash { opacity: 0.4; }
+
+      /* ---------- display type ---------- */
+      .display { font-size: clamp(40px, 6.6vw, 86px); font-weight: 900; line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 22px; text-wrap: balance; }
+      .display .accent { background: linear-gradient(120deg, var(--acc), var(--acc-soft)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .lead { color: var(--muted); font-size: clamp(15px, 1.7vw, 18px); max-width: 46ch; margin: 0 0 34px; line-height: 1.8; }
+      .section { padding: 110px 0; position: relative; }
+      .section + .section { border-top: 1px solid var(--line); }
+      .two-col { display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; }
+      @media (max-width: 980px) { .two-col { grid-template-columns: 1fr; gap: 40px; } }
+      .section-head { position: sticky; top: 100px; }
+      @media (max-width: 980px) { .section-head { position: static; } }
+      .section-title { font-size: clamp(30px, 4.2vw, 52px); font-weight: 900; line-height: 1.12; letter-spacing: -0.02em; margin: 0 0 16px; text-wrap: balance; }
+      .section-title .accent { background: linear-gradient(120deg, var(--acc), var(--acc-soft)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .section-sub { color: var(--muted); font-size: 16px; max-width: 44ch; margin: 0; }
+
+      /* ---------- hero ---------- */
+      .hero { padding: 90px 0 60px; }
+      .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+      @media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 22px; }
+      .btn-primary { display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 999px; font-weight: 800; font-size: 14px; background: linear-gradient(135deg, var(--cta1), var(--cta2)); color: var(--cta-ink); transition: transform .18s ease, box-shadow .18s ease; }
+      .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgba(247, 198, 236, 0.28); }
+      .btn-ghost { display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 14px; border: 1px solid var(--line); color: var(--ink); background: transparent; transition: border-color .18s ease, transform .18s ease; }
+      .btn-ghost:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
+      .hero-hint { color: var(--muted); font-size: 13px; }
+
+      /* ---------- core panel ---------- */
+      .core { position: relative; display: grid; place-items: center; min-height: 420px; }
+      .core .halo { position: absolute; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.28), transparent 62%); filter: blur(40px); }
+      .core-frame { position: relative; width: min(360px, 86vw); aspect-ratio: 1 / 1.12; border: 1px solid var(--line); border-radius: var(--r); background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005)); overflow: hidden; display: grid; place-items: center; }
+      .core-frame .orb { width: 190px; height: 190px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #f3ddff, #b06bff 38%, #4b1d7a 72%, #170a24 100%); box-shadow: inset -22px -26px 70px rgba(0,0,0,0.75), 0 0 90px rgba(168,85,247,0.45); position: relative; z-index: 2; }
+      .core-frame .rings { position: absolute; inset: 0; z-index: 1; }
+      .core-frame .rings svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .core-frame .rings .r1 { animation: spin 40s linear infinite; }
+      .core-frame .rings .r2 { animation: spin 62s linear infinite reverse; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .core-foot { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--muted); background: rgba(10,7,16,0.5); backdrop-filter: blur(8px); }
+      .core-foot .tag { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
+      .core-foot .tag i { width: 8px; height: 8px; background: var(--acc); display: inline-block; }
+
+      /* ---------- stats strip ---------- */
+      .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); margin-top: 60px; }
+      @media (max-width: 760px) { .stats { grid-template-columns: 1fr 1fr; } }
+      .stat { padding: 26px 0; border-right: 1px solid var(--line); }
+      .stat:first-child { border-right: none; }
+      @media (max-width: 760px) { .stat:nth-child(2n) { border-right: none; } .stat { border-bottom: 1px solid var(--line); } }
+      .stat .v { font-size: 34px; font-weight: 900; letter-spacing: -0.03em; background: linear-gradient(120deg, var(--acc), var(--acc-soft)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .stat .l { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+      /* ---------- tools grid ---------- */
+      .cells { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+      .cell { background: var(--bg); padding: 30px 26px; min-height: 170px; display: flex; flex-direction: column; gap: 10px; }
+      .cell .n { font-family: var(--mono); font-size: 12px; color: var(--acc-soft); letter-spacing: 0.1em; }
+      .cell h3 { margin: 0; font-size: 20px; font-weight: 800; }
+      .cell p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.7; }
+
+      /* ---------- chat mock ---------- */
+      .chat-frame { border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: rgba(255,255,255,0.015); }
+      .chat-bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--muted); background: rgba(255,255,255,0.02); }
+      .chat-bar .sq { width: 10px; height: 10px; background: var(--acc); display: inline-block; margin-inline-start: 8px; }
+      .chat-body { padding: 20px 18px; display: grid; gap: 12px; }
+      .chat-row { display: grid; gap: 4px; }
+      .chat-row .who { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); }
+      .chat-row .bubble { padding: 10px 14px; border-radius: var(--r); font-size: 14.5px; line-height: 1.6; max-width: 92%; }
+      .chat-row.me { justify-self: start; }
+      .chat-row.me .bubble { background: rgba(255,255,255,0.04); border: 1px solid var(--line); }
+      .chat-row.ai { justify-self: end; text-align: end; }
+      .chat-row.ai .bubble { background: rgba(168, 85, 247, 0.10); border: 1px solid rgba(168,85,247,0.3); }
+      .bullets { display: grid; gap: 14px; margin-top: 28px; }
+      .bullet { display: flex; gap: 14px; align-items: flex-start; color: var(--muted); font-size: 15px; line-height: 1.7; }
+      .bullet::before { content: ""; width: 18px; height: 1px; background: var(--acc); margin-top: 12px; flex-shrink: 0; }
+      .circuit { margin-top: 18px; border: 1px solid var(--line); border-radius: var(--r); height: 150px; position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(168,85,247,0.08), rgba(247,198,236,0.04)); }
+      .circuit svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.7; }
+
+      /* ---------- everyone 4 cols ---------- */
+      .four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); }
+      @media (max-width: 880px) { .four { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 560px) { .four { grid-template-columns: 1fr; } }
+      .four .col { padding: 28px 20px 28px 0; border-left: 1px solid var(--line); }
+      .four .col:first-child { border-left: none; }
+      @media (max-width: 880px) { .four .col:nth-child(2n) { border-left: none; } }
+      .four .n { font-family: var(--mono); font-size: 12px; color: var(--acc-soft); margin-bottom: 10px; }
+      .four h3 { margin: 0 0 8px; font-size: 19px; font-weight: 800; }
+      .four p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+      /* ---------- platforms ---------- */
+      .platforms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); }
+      @media (max-width: 880px) { .platforms { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 560px) { .platforms { grid-template-columns: 1fr; } }
+      .platforms .col { padding: 26px 20px 26px 0; border-left: 1px solid var(--line); display: grid; gap: 8px; }
+      .platforms .col:first-child { border-left: none; }
+      @media (max-width: 880px) { .platforms .col:nth-child(2n) { border-left: none; } }
+      .platforms .name { font-size: 22px; font-weight: 900; letter-spacing: -0.01em; }
+      .platforms .status { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; color: var(--acc-soft); }
+      .platforms p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.7; }
+      .platforms .link { margin-top: 6px; font-size: 13px; font-weight: 700; color: var(--ink); border-bottom: 1px solid var(--line); display: inline-block; padding-bottom: 2px; width: fit-content; }
+      .platforms .link:hover { border-color: var(--acc); color: var(--acc-soft); }
+      .platform-note { margin-top: 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--line); }
+      .platform-note p { color: var(--muted); font-size: 13px; margin: 0; max-width: 62ch; }
+
+      /* ---------- waitlist ---------- */
+      .form { display: grid; gap: 18px; max-width: 520px; }
+      .field { display: grid; gap: 8px; }
+      .field label { font-size: 13px; color: var(--muted); }
+      .field input, .field textarea {
+        background: transparent; border: 1px solid var(--line); border-radius: var(--r);
+        color: var(--ink); padding: 13px 14px; font-size: 15px; font-family: inherit;
+        transition: border-color .18s ease;
+      }
+      .field input:focus, .field textarea:focus { outline: none; border-color: rgba(168,85,247,0.6); }
+      .field textarea { min-height: 110px; resize: vertical; }
+      .field .err { color: #fca5a5; font-size: 12.5px; min-height: 16px; }
+      .btn-submit { display: inline-flex; align-items: center; justify-content: center; padding: 15px 26px; border-radius: 999px; font-weight: 800; font-size: 14px; background: linear-gradient(135deg, var(--cta1), var(--cta2)); color: var(--cta-ink); border: none; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; width: 100%; }
+      .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgba(247, 198, 236, 0.28); }
+      .btn-submit[disabled] { opacity: 0.5; cursor: not-allowed; transform: none; }
+      .success { color: var(--acc-soft); font-size: 14px; padding: 12px 0; }
+
+      /* ---------- faq ---------- */
+      .faq { border-top: 1px solid var(--line); }
+      .faq-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+      .ads-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+      .ad-card { border: 1px solid var(--line); border-radius: 14px; padding: 20px; background: var(--panel); }
+      .ad-card h3 { margin: 0 0 8px; font-size: 18px; }
+      .ad-card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+      .ad-cta { display: inline-block; padding: 8px 14px; border-radius: 8px; background: var(--accent); color: #0b0712; font-weight: 700; text-decoration: none; font-size: 13px; }
+      .ad-empty { color: var(--muted); padding: 20px; text-align: center; }
+      .faq-row .q { font-size: 17px; font-weight: 700; }
+      .faq-row .a { grid-column: 1 / -1; color: var(--muted); font-size: 14.5px; line-height: 1.7; padding-top: 12px; display: none; }
+      .faq-row.open .a { display: block; }
+      .faq-row .toggle { font-family: var(--mono); font-size: 18px; color: var(--muted); transition: transform .2s ease; }
+      .faq-row.open .toggle { transform: rotate(45deg); color: var(--acc-soft); }
+
+      /* ---------- footer ---------- */
+      footer { border-top: 1px solid var(--line); padding: 60px 0 30px; }
+      .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; }
+      @media (max-width: 880px) { .foot-grid { grid-template-columns: 1fr; gap: 36px; } }
+      .foot-brand { font-weight: 900; letter-spacing: 0.22em; font-size: 15px; display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+      .foot-brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 14px var(--acc); }
+      .foot-desc { color: var(--muted); font-size: 14px; line-height: 1.8; max-width: 40ch; }
+      .foot-col h4 { margin: 0 0 14px; font-size: 12px; font-family: var(--mono); letter-spacing: 0.14em; color: var(--muted); font-weight: 500; }
+      .foot-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+      .foot-col a { color: var(--ink); font-size: 14px; opacity: 0.85; }
+      .foot-col a:hover { opacity: 1; color: var(--acc-soft); }
+      .foot-status { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+      .foot-status .row { display: flex; align-items: center; gap: 10px; }
+      .foot-status .pip { width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 10px #34d399; }
+      .foot-bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 12px; font-family: var(--mono); letter-spacing: 0.06em; }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://site-46a89efcae814916890b8988f2f1d0dd.freebuff.page/#website",
+            "url": "https://site-46a89efcae814916890b8988f2f1d0dd.freebuff.page/",
+            "name": "ZANOX9.AI",
+            "alternateName": "زنوكس",
+            "inLanguage": "ar",
+            "description": "منصة عربية للذكاء الاصطناعي: محادثة، أوضاع متخصصة، ملفات وصور على الويب وأندرويد."
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://site-46a89efcae814916890b8988f2f1d0dd.freebuff.page/#app",
+            "name": "ZANOX9.AI",
+            "url": "https://site-46a89efcae814916890b8988f2f1d0dd.freebuff.page/",
+            "applicationCategory": "ProductivityApplication",
+            "operatingSystem": "Web, Android",
+            "inLanguage": "ar",
+            "description": "مساعد ذكي عربي للمحادثة وقراءة الملفات وتوليد المستندات والصور.",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <div class="glow g1"></div>
+      <div class="glow g2"></div>
+      <div class="grid"></div>
+    </div>
+
+    <header>
+      <div class="shell nav">
+        <div class="logo"><span class="dot"></span> <span id="brand">ZANOX9.AI</span></div>
+        <nav class="nav-links">
+          <a href="#tools">الأدوات</a>
+          <a href="#chat">المحادثة</a>
+          <a href="#platforms">المنصات</a>
+          <a href="#waitlist">الوصول المبكر</a>
+        </nav>
+        <a class="pill" href="#waitlist">انضم</a>
+      </div>
+    </header>
+
+    <main class="shell">
+      <!-- hero -->
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker"><span class="num" id="hero-num">00</span><span class="slash">/</span><span id="hero-badge">محرك ZENOX</span></div>
+            <h1 class="display" id="hero-title">ذكاء عربي واحد، <span class="accent">لكل مهمة.</span></h1>
+            <p class="lead" id="hero-sub">محادثة تفهم العربية والمصرية، سبعة أوضاع متخصصة، وقراءة ملفاتك وتوليد المستندات والصور من نفس المكان.</p>
+            <div class="hero-actions">
+              <a class="btn-primary" href="#waitlist">انضم إلى الوصول المبكر</a>
+              <a class="btn-ghost" href="#tools">تعرّف على الأدوات</a>
+            </div>
+            <p class="hero-hint" id="hero-hint">يعمل على الهاتف والكمبيوتر · لا يحتاج تثبيت لنسخة الويب</p>
+          </div>
+          <div class="core">
+            <div class="halo"></div>
+            <div class="core-frame">
+              <div class="rings">
+                <svg class="r1" viewBox="0 0 200 200"><ellipse cx="100" cy="100" rx="92" ry="34" fill="none" stroke="rgba(192,132,252,0.35)" stroke-width="1"/><ellipse cx="100" cy="100" rx="92" ry="34" fill="none" stroke="rgba(168,85,247,0.25)" stroke-width="1" transform="rotate(60 100 100)"/><ellipse cx="100" cy="100" rx="92" ry="34" fill="none" stroke="rgba(247,198,236,0.22)" stroke-width="1" transform="rotate(120 100 100)"/></svg>
+                <svg class="r2" viewBox="0 0 200 200"><circle cx="100" cy="100" r="62" fill="none" stroke="rgba(168,85,247,0.18)" stroke-width="1" stroke-dasharray="4 6"/></svg>
+              </div>
+              <div class="orb"></div>
+              <div class="core-foot">
+                <span>ZANOX CORE</span>
+                <span class="tag"><i></i>جاهز</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="v">7</div><div class="l">أوضاع متخصصة</div></div>
+          <div class="stat"><div class="v">0</div><div class="l">تكلفة الموديلات المجانية</div></div>
+          <div class="stat"><div class="v">13</div><div class="l">موديلًا مجانيًا متاحًا</div></div>
+          <div class="stat"><div class="v">24/7</div><div class="l">تبديل تلقائي بين المزوّدين</div></div>
+        </div>
+      </section>
+
+      <!-- 01 tools -->
+      <section id="tools" class="section">
+        <div class="two-col">
+          <div class="section-head">
+            <div class="kicker"><span class="num">01</span><span class="slash">/</span><span>الأدوات</span></div>
+            <h2 class="section-title" id="features-title">نماذج وأدوات، <span class="accent">داخل تطبيق واحد.</span></h2>
+            <p class="section-sub" id="features-sub">لا تحتاج اشتراكًا في خمسة تطبيقات منفصلة. المحادثة والمستندات والصور والصوت والبحث في مكان واحد، وبنفس الهوية.</p>
+          </div>
+          <div class="cells" id="features-grid"></div>
+        </div>
+      </section>
+
+      <!-- 02 chat -->
+      <section id="chat" class="section">
+        <div class="two-col">
+          <div class="section-head">
+            <div class="kicker"><span class="num">02</span><span class="slash">/</span><span>المحادثة</span></div>
+            <h2 class="section-title">اكتب طلبك، <span class="accent">واحصل على النتيجة.</span></h2>
+            <div class="bullets">
+              <div class="bullet">عربية فصحى أو مصرية أو إنجليزية — تبدّل اللغة من الواجهة.</div>
+              <div class="bullet">يعمل Offline و Online حسب الأداة ونوع الاتصال.</div>
+              <div class="bullet">طبقة سياسة تحددها ZENOX تحكم النماذج والصلاحيات، وكل طلب يمر عبرها.</div>
+            </div>
+          </div>
+          <div>
+            <div class="chat-frame">
+              <div class="chat-bar"><span>ZENOX CHAT<span class="sq"></span></span><span>●</span></div>
+              <div class="chat-body">
+                <div class="chat-row me"><div class="who">أنت</div><div class="bubble">اقرأ ملف ال.PDF ده ولخص شروط الدفع في جدول.</div></div>
+                <div class="chat-row ai"><div class="who">ZENOX</div><div class="bubble">تم . جدول بثلاثة أعمدة: الدفعَة، التاريخ، الحالة.</div></div>
+                <div class="chat-row me"><div class="who">أنت</div><div class="bubble">اشرح لي الخطأ في هذا الكود.</div></div>
+                <div class="chat-row ai"><div class="who">ZENOX</div><div class="bubble">السبب: فهرس خارج الحدود . الإصلاح في ثلاثة أسطر.</div></div>
+              </div>
+            </div>
+            <div class="circuit" aria-hidden="true">
+              <svg viewBox="0 0 400 150" preserveAspectRatio="none">
+                <defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a855f7" stop-opacity="0.6"/><stop offset="1" stop-color="#f7c6ec" stop-opacity="0.3"/></linearGradient></defs>
+                <g stroke="url(#cg)" stroke-width="1" fill="none">
+                  <path d="M0,75 L60,75 L60,30 L140,30 L140,110 L220,110 L220,50 L320,50 L320,90 L400,90"/>
+                  <path d="M0,40 L40,40 L40,120 L120,120 L120,60 L200,60 L200,130 L300,130 L300,20 L400,20"/>
+                  <circle cx="60" cy="75" r="3" fill="#a855f7"/><circle cx="140" cy="30" r="3" fill="#a855f7"/><circle cx="220" cy="110" r="3" fill="#a855f7"/><circle cx="320" cy="50" r="3" fill="#c084fc"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 everyone -->
+      <section id="everyone" class="section">
+        <div class="two-col">
+          <div class="section-head">
+            <div class="kicker"><span class="num">03</span><span class="slash">/</span><span>للجميع</span></div>
+            <h2 class="section-title">منصة واحدة، <span class="accent">لكل الناس.</span></h2>
+            <p class="section-sub">لا تحتاج خبرة تقنية لتبدأ، ولا اشتراكًا في خمسة تطبيقات منفصلة.</p>
+          </div>
+          <div class="four">
+            <div class="col"><div class="n">01</div><h3>للطلاب</h3><p>أدوات دراسية: شرح درس صعب، تلخيص ملف، وأسئلة تدريب قبل الامتحان.</p></div>
+            <div class="col"><div class="n">02</div><h3>المطورين</h3><p>كتابة الأكواد وشرحها ومراجعتها، وتتبع الأخطاء في نفس المحادثة.</p></div>
+            <div class="col"><div class="n">03</div><h3>المكاتب والأعمال</h3><p>تقارير وجداول من ملفاتك، ورسائل عملاء وصياغة مراسلات بنبرتك.</p></div>
+            <div class="col"><div class="n">04</div><h3>للعائلات</h3><p>خطة رحلة، ميزانية شهرية، أو شرح تثقيفي مبسط لتقرير طبي.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 platforms -->
+      <section id="platforms" class="section">
+        <div class="two-col">
+          <div class="section-head">
+            <div class="kicker"><span class="num">04</span><span class="slash">/</span><span>المنصات</span></div>
+            <h2 class="section-title">تطبيق واحد، <span class="accent">على كل أجهزتك.</span></h2>
+            <p class="section-sub">موقع ZENOX هو نقطة التنزيل الرسمية. كل إصدار يظهر هنا بعد فحصه، مع حجم الملف وتاريخ الإصدار والمتطلبات، ويبقى الإصدار السابق محفوظًا للرجوع إليه.</p>
+          </div>
+          <div>
+            <div class="platforms">
+              <div class="col">
+                <div class="name">Android</div>
+                <div class="status">متاح الآن</div>
+                <p>الإصدار 1.1 · 29 KB · Android 7.0+ — تنزيل مباشر من الموقع الرسمي.</p>
+                <a class="link" id="apk-link" href="/zenox.apk" download>تنزيل APK</a>
+              </div>
+              <div class="col">
+                <div class="name">iPhone</div>
+                <div class="status">قيد التجهيز</div>
+                <p>التوزيع عبر قناة رسمية تسمح بها Apple، دون تجاوز قيود المتجر.</p>
+              </div>
+              <div class="col">
+                <div class="name">الويب</div>
+                <div class="status">قيد التجهيز</div>
+                <p>تفتح ZENOX من المتصفح على أي جهاز دون تثبيت.</p>
+                <a class="link" id="web-link" href="#" aria-disabled="true">افتح نسخة الويب</a>
+              </div>
+              <div class="col">
+                <div class="name">Windows</div>
+                <div class="status">اختياري</div>
+                <p>إصدار سطح المكتب اختياري لمن يريد مساحة عمل أوسع.</p>
+              </div>
+            </div>
+            <div class="platform-note">
+              <p>روابط التنزيل تُفتح لأعضاء الوصول المبكر أولاً، وتكون صالحة لاستخدام واحد أو لفترة محددة.</p>
+              <a class="btn-primary" href="#waitlist">انضم إلى الوصول المبكر</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 ads -->
+      <section id="ads" class="section">
+        <div class="section-head">
+          <span class="section-num">05 / إعلانات</span>
+          <h2 class="section-title">إعلانات <em>ZENOX.</em></h2>
+        </div>
+        <div class="ads-grid" id="adsGrid"></div>
+      </section>
+
+      <!-- 06 waitlist -->
+      <section id="waitlist" class="section">
+        <div class="two-col">
+          <div class="section-head">
+            <div class="kicker"><span class="num">05</span><span class="slash">/</span><span>الدفعة الأولى</span></div>
+            <h2 class="section-title">الدفعة الأولى <span class="accent">محدودة.</span></h2>
+            <p class="section-sub">اترك بريدك وسنرسل دعوتك عند فتح الباب. دعوة واحدة فقط، بلا رسائل ترويجية.</p>
+          </div>
+          <form class="form" id="waitlist-form" novalidate>
+            <div class="field">
+              <label for="wl-name">الاسم</label>
+              <input id="wl-name" name="name" type="text" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="wl-email">البريد الإلكتروني</label>
+              <input id="wl-email" name="email" type="email" autocomplete="email" required />
+              <div class="err" id="wl-email-err"></div>
+            </div>
+            <div class="field">
+              <label for="wl-note">ماذا تود أن تفعل بـ ZENOX؟</label>
+              <textarea id="wl-note" name="note"></textarea>
+            </div>
+            <button class="btn-submit" type="submit" id="wl-submit">احفظ مكاني في القائمة</button>
+            <div class="success" id="wl-success"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- 07 faq -->
+      <section id="faq" class="section">
+        <div class="two-col">
+          <div class="section-head">
+            <div class="kicker"><span class="num">06</span><span class="slash">/</span><span>أسئلة</span></div>
+            <h2 class="section-title" id="faq-title">أسئلة شائعة</h2>
+          </div>
+          <div class="faq" id="faq-list">
+            <div class="faq-row open">
+              <div class="q">هل أحتاج حسابًا لاستخدامه؟</div>
+              <div class="toggle">+</div>
+              <div class="a">لا. تفتح الموقع وتبدأ المحادثة مباشرة.</div>
+            </div>
+            <div class="faq-row">
+              <div class="q">ما الفرق بين نسخة الويب وAPK؟</div>
+              <div class="toggle">+</div>
+              <div class="a">نفس التطبيق. الويب يعمل بلا تثبيت، وAPK يثبّت أيقونة على الهاتف.</div>
+            </div>
+            <div class="faq-row">
+              <div class="q">هل مفاتيحي ظاهرة لأحد؟</div>
+              <div class="toggle">+</div>
+              <div class="a">لا. تُخزَّن مشفّرة على الخادم ولا تُطبع في أي سجل.</div>
+            </div>
+            <div class="faq-row">
+              <div class="q">هل يعمل بلا إنترنت؟</div>
+              <div class="toggle">+</div>
+              <div class="a">لا، الردود تأتي من مزوّدي الذكاء الاصطناعي وتحتاج اتصالًا.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell">
+        <div class="foot-grid">
+          <div>
+            <div class="foot-brand"><span class="dot"></span> <span id="brand2">ZANOX9.AI</span></div>
+            <p class="foot-desc" id="footer-text">منصة ذكاء اصطناعي واحدة بالعربية والإنجليزية: محادثة، مستندات، صور، صوت وبحث - على Android و iPhone و Web.</p>
+          </div>
+          <div class="foot-col">
+            <h4>الموقع</h4>
+            <ul>
+              <li><a href="#tools">الأدوات</a></li>
+              <li><a href="#chat">كيف يعمل</a></li>
+              <li><a href="#everyone">للجميع</a></li>
+              <li><a href="#platforms">المنصات</a></li>
+              <li><a href="#waitlist">الوصول المبكر</a></li>
+              <li><a href="/admin">إدارة الموقع</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>الحالة</h4>
+            <div class="foot-status">
+              <div class="row"><span class="pip"></span>قيد التطوير</div>
+              <div>build 1.0.0-alpha</div>
+            </div>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>© ZENOX 2026</span>
+          <span>سياسة ZENOX</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const fallback = {
+        brand: "ZANOX9.AI",
+        hero: {
+          badge: "محرك ZENOX",
+          title: "ذكاء عربي واحد، <em>لكل مهمة.</em>",
+          subtitle: "محادثة تفهم العربية والمصرية، سبعة أوضاع متخصصة، وقراءة ملفاتك وتوليد المستندات والصور من نفس المكان.",
+          hint: "يعمل على الهاتف والكمبيوتر · لا يحتاج تثبيت لنسخة الويب",
+        },
+        features: [
+          { icon: "chat", title: "محادثة وكتابة", text: "محادثة بالعربية الفصحى أو المصرية أو الإنجليزية، مع تلخيص وإعادة صياغة وترجمة وكتابة أكواد وشرحها." },
+          { icon: "files", title: "مستنداتك مفهومة", text: "تحليل ملفات PDF والملفات النصية، واستخراج ما تحتاجه منها وتحويله إلى تقرير أو جدول." },
+          { icon: "image", title: "صور من وصف", text: "إنشاء الصور وتعديلها، وتحليل صورة ترفعها وشرح ما فيها." },
+          { icon: "speed", title: "صوت وفهم", text: "تحويل الكلام إلى نص، والنص إلى كلام، ومحادثة صوتية مباشرة داخل التطبيق." },
+          { icon: "modes", title: "بحث وكيل", text: "بحث متعدد الخطوات على الإنترنت مع ذكر المصادر، وتقارير وجداول من نتائج البحث." },
+          { icon: "lock", title: "تحت تحكم ZENOX", text: "طبقة سياسة تحددها ZENOX تحكم النماذج والأدوات والصلاحيات، فكل طلب يمر عبرها قبل التنفيذ." },
+        ],
+        download: {
+          title: "احصل على التطبيق",
+          subtitle: "نسخة الويب تعمل فورًا من المتصفح. نسخة أندرويد تُثبّت كتطبيق عادي على الهاتف.",
+          webNote: "افتحها من أي متصفح — هاتف أو كمبيوتر، بلا تثبيت وبلا متجر.",
+          apkNote: "التنزيل المباشر من الرابط الرسمي، بلا حاجة لمتجر Play.",
+          webUrl: "",
+          apkUrl: "/zenox.apk",
+        },
+        faq: [
+          { q: "هل أحتاج حسابًا لاستخدامه؟", a: "لا. تفتح الموقع وتبدأ المحادثة مباشرة." },
+          { q: "ما الفرق بين نسخة الويب وAPK؟", a: "نفس التطبيق. الويب يعمل بلا تثبيت، وAPK يثبّت أيقونة على الهاتف." },
+          { q: "هل مفاتيحي ظاهرة لأحد؟", a: "لا. تُخزَّن مشفّرة على الخادم ولا تُطبع في أي سجل." },
+          { q: "هل يعمل بلا إنترنت؟", a: "لا، الردود تأتي من مزوّدي الذكاء الاصطناعي وتحتاج اتصالًا." },
+        ],
+        footer: "منصة ذكاء اصطناعي واحدة بالعربية والإنجليزية: محادثة، مستندات، صور، صوت وبحث - على Android و iPhone و Web.",
+      };
+
+      const setLink = (el, url) => {
+        if (!el) return;
+        if (url) { el.href = url; el.removeAttribute("aria-disabled"); }
+        else { el.removeAttribute("href"); el.setAttribute("aria-disabled", "true"); }
+      };
+
+      function render(c) {
+        const $ = (id) => document.getElementById(id);
+        if ($("brand")) $("brand").textContent = c.brand;
+        if ($("brand2")) $("brand2").textContent = c.brand;
+        if ($("hero-badge")) $("hero-badge").textContent = c.hero.badge;
+        if ($("hero-title")) $("hero-title").innerHTML = c.hero.title.replace(/<(?!\/?em>)[^>]*>/g, "");
+        if ($("hero-sub")) $("hero-sub").textContent = c.hero.subtitle;
+        if ($("hero-hint")) $("hero-hint").textContent = c.hero.hint;
+        if ($("features-title")) $("features-title").textContent = "نماذج وأدوات، داخل تطبيق واحد.";
+        if ($("features-sub")) $("features-sub").textContent = c.featuresSub || "لا تحتاج اشتراكًا في خمسة تطبيقات منفصلة. المحادثة والمستندات والصور والصوت والبحث في مكان واحد، وبنفس الهوية.";
+        if ($("faq-title")) $("faq-title").textContent = "أسئلة شائعة";
+        if ($("footer-text")) $("footer-text").textContent = c.footer;
+
+        const grid = $("features-grid");
+        if (grid) {
+          grid.textContent = "";
+          (c.features || []).forEach((feature, i) => {
+            const cell = document.createElement("div");
+            cell.className = "cell";
+            const n = document.createElement("div"); n.className = "n"; n.textContent = String(i + 1).padStart(2, "0");
+            const h3 = document.createElement("h3"); h3.textContent = feature.title;
+            const p = document.createElement("p"); p.textContent = feature.text;
+            cell.append(n, h3, p);
+            grid.append(cell);
+          });
+        }
+
+        const faq = $("faq-list");
+        if (faq) {
+          faq.textContent = "";
+          (c.faq || []).forEach((item) => {
+            const row = document.createElement("div");
+            row.className = "faq-row";
+            const q = document.createElement("div"); q.className = "q"; q.textContent = item.q;
+            const t = document.createElement("div"); t.className = "toggle"; t.textContent = "+";
+            const a = document.createElement("div"); a.className = "a"; a.textContent = item.a;
+            row.append(q, t, a);
+            row.addEventListener("click", () => row.classList.toggle("open"));
+            faq.append(row);
+          });
+        }
+
+        const adsGrid = $("adsGrid");
+        if (adsGrid) {
+          adsGrid.textContent = "";
+          (c.ads || []).filter((a) => a.enabled !== false).forEach((ad) => {
+            const card = document.createElement("div");
+            card.className = `ad-card ad-${ad.tone || "info"}`;
+            const h3 = document.createElement("h3"); h3.textContent = ad.title;
+            const p = document.createElement("p"); p.textContent = ad.body;
+            card.append(h3, p);
+            if (ad.ctaLabel && ad.ctaUrl) {
+              const a = document.createElement("a"); a.className = "ad-cta"; a.textContent = ad.ctaLabel; a.href = ad.ctaUrl; a.target = "_blank"; a.rel = "noopener";
+              card.append(a);
+            }
+            adsGrid.append(card);
+          });
+          if (!adsGrid.children.length) {
+            const empty = document.createElement("div"); empty.className = "ad-empty"; empty.textContent = "لا توجد إعلانات نشطة حالياً.";
+            adsGrid.append(empty);
+          }
+        }
+
+        setLink($("web-link"), c.download.webUrl);
+        setLink($("apk-link"), c.download.apkUrl);
+      }
+
+      render(fallback);
+      fetch("/api/content", { headers: { accept: "application/json" } })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((data) => { if (data && data.content) render({ ...fallback, ...data.content, featuresSub: (data.content.featuresSub) }); })
+        .catch(() => {});
+
+      // waitlist form
+      const form = document.getElementById("waitlist-form");
+      const emailInput = document.getElementById("wl-email");
+      const emailErr = document.getElementById("wl-email-err");
+      const success = document.getElementById("wl-success");
+      const submitBtn = document.getElementById("wl-submit");
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        emailErr.textContent = "";
+        success.textContent = "";
+        const email = emailInput.value.trim();
+        if (!emailRe.test(email)) { emailErr.textContent = "اكتب بريدًا إلكترونيًا صحيحًا."; return; }
+        submitBtn.disabled = true;
+        submitBtn.textContent = "جارٍ الحفظ…";
+        try {
+          const res = await fetch("/api/waitlist", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ name: document.getElementById("wl-name").value.trim(), email, note: document.getElementById("wl-note").value.trim() }),
+          });
+          if (!res.ok) throw new Error("fail");
+          success.textContent = "تم حفظ مكانك — سنراسلك عند فتح الباب.";
+          form.reset();
+        } catch {
+          success.textContent = "";
+          emailErr.textContent = "تعذّر الحفظ. حاول مرة أخرى.";
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "احفظ مكاني في القائمة";
+        }
+      });
+    </script>
+  </body>
+</html>
+EOF
+echo written

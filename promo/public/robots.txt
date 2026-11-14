@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin.html
+
+Sitemap: https://site-46a89efcae814916890b8988f2f1d0dd.freebuff.page/sitemap.xml

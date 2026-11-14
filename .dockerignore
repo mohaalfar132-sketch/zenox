@@ -1,0 +1,17 @@
+node_modules
+.git
+.github
+.expo
+dist
+dist-web
+uploads
+.zenox-chats
+.zenox-backups
+.zenox-memory.json
+.zenox-owner.json
+.env
+.env.*
+!.env.example
+*.tgz
+artifacts
+deploy/*.tgz

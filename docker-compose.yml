@@ -1,0 +1,49 @@
+# Permanent ZENOX deployment: the app keeps running (restart: unless-stopped)
+# and its data lives on a named volume, so a restart or a rebuild loses nothing.
+services:
+  app:
+    build: .
+    image: zenox-app:latest
+    restart: unless-stopped
+    stop_grace_period: 30s
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      ZENOX_DATA_DIR: /data
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - zenox-data:/data
+      - zenox-uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 25s
+      retries: 3
+
+  # TLS and a stable hostname. Caddy renews certificates by itself and passes
+  # server-sent events through untouched.
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - app
+    environment:
+      DOMAIN: ${DOMAIN:?set DOMAIN in .env, for example zenox.duckdns.org}
+      EMAIL: ${EMAIL:-}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+volumes:
+  zenox-uploads:
+  zenox-data:
+  caddy-data:
+  caddy-config:

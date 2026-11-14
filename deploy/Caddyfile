@@ -1,0 +1,12 @@
+# Reverse proxy in front of the app container: automatic HTTPS for {$DOMAIN}.
+{$DOMAIN} {
+	encode zstd gzip
+	reverse_proxy app:3000 {
+		# Server-sent events (chat stream, terminal output) must not be buffered.
+		flush_interval -1
+		transport http {
+			read_timeout 24h
+			write_timeout 24h
+		}
+	}
+}

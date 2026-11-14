@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZANOX9.AI — تحرير الموقع</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      :root { --bg:#05070f; --panel:rgba(13,19,32,.82); --line:rgba(120,160,220,.2); --text:#e9eefb; --muted:#93a3bd; --brand:#38bdf8; --brand2:#a78bfa; --ok:#34d399; --bad:#f87171; }
+      * { box-sizing: border-box; }
+      body { margin:0; background: radial-gradient(900px 420px at 80% -10%, rgba(56,189,248,.16), transparent 60%), var(--bg); color:var(--text); font-family:"Segoe UI",Tahoma,"Noto Kufi Arabic",system-ui,sans-serif; line-height:1.7; }
+      .wrap { width:min(980px,94vw); margin:0 auto; padding:26px 0 80px; }
+      header { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0 22px; border-bottom:1px solid var(--line); }
+      h1 { font-size:20px; margin:0; }
+      h1 span { color:var(--brand); }
+      .btn { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); background:var(--panel); color:var(--text); padding:10px 16px; border-radius:11px; font-weight:700; font-size:14px; cursor:pointer; }
+      .btn.primary { background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#04121f; border-color:transparent; }
+      .btn:disabled { opacity:.5; cursor:not-allowed; }
+      fieldset { border:1px solid var(--line); border-radius:16px; background:var(--panel); padding:18px; margin:18px 0; }
+      legend { padding:0 8px; font-weight:800; color:var(--brand); font-size:14px; }
+      label { display:block; font-size:13px; color:var(--muted); margin:12px 0 6px; }
+      input, textarea { width:100%; background:#0a1020; color:var(--text); border:1px solid var(--line); border-radius:10px; padding:10px 12px; font:inherit; font-size:14px; }
+      textarea { min-height:70px; resize:vertical; }
+      .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+      @media (max-width:720px){ .row { grid-template-columns:1fr; } }
+      .item { border:1px dashed var(--line); border-radius:12px; padding:12px; margin-top:12px; }
+      .item-head { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:6px; }
+      .item-head b { font-size:13px; color:var(--muted); }
+      .del { background:none; border:none; color:var(--bad); font-size:13px; cursor:pointer; }
+      #gate { max-width:420px; margin:12vh auto; border:1px solid var(--line); border-radius:18px; padding:26px; background:var(--panel); }
+      .msg { min-height:22px; font-size:13px; margin-top:12px; }
+      .ok { color:var(--ok); } .bad { color:var(--bad); }
+      .hidden { display:none !important; }
+      .bar { position:sticky; bottom:0; background:rgba(5,7,15,.92); backdrop-filter:blur(10px); border-top:1px solid var(--line); padding:12px 0; display:flex; gap:10px; justify-content:space-between; align-items:center; }
+      a.back { color:var(--muted); font-size:13px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="gate">
+        <h1 style="margin-bottom:6px">فتح من <span>لوحة المالك</span></h1>
+        <p style="color:var(--muted);font-size:13px;margin:0 0 14px">
+          محرر الموقع مرتبط بجلسة ZENOX. افتح لوحة المالك واضغط «تحرير الموقع» — لا توجد كلمة مرور منفصلة هنا.
+        </p>
+        <p class="msg" id="gate-msg"></p>
+        <a class="back" href="/" style="display:inline-block;margin-top:14px">العودة إلى الموقع ↗</a>
+      </div>
+
+      <div id="editor" class="hidden">
+        <header>
+          <h1>تحرير <span>الموقع</span></h1>
+          <div style="display:flex;gap:8px;align-items:center">
+            <a class="back" href="/" target="_blank" rel="noopener">عرض الموقع ↗</a>
+            <button class="btn" id="logout">خروج</button>
+          </div>
+        </header>
+        <p style="color:var(--muted);font-size:13px">كل تعديل يُحفظ على الخادم ويظهر للزوّار مباشرة بعد الحفظ. الروابط تقبل <b>https</b> فقط.</p>
+
+        <form id="form">
+          <fieldset>
+            <legend>الهوية</legend>
+            <label>اسم الموقع</label>
+            <input name="brand" maxlength="40" />
+          </fieldset>
+
+          <fieldset>
+            <legend>الواجهة الرئيسية</legend>
+            <label>الشريط العلوي الصغير (badge)</label>
+            <input name="hero.badge" maxlength="80" />
+            <label>العنوان الرئيسي (يُسمح بوسم &lt;em&gt; فقط للتلوين)</label>
+            <input name="hero.title" maxlength="140" />
+            <label>النص التعريفي</label>
+            <textarea name="hero.subtitle" maxlength="320"></textarea>
+            <label>سطر صغير تحت الأزرار</label>
+            <input name="hero.hint" maxlength="160" />
+          </fieldset>
+
+          <fieldset>
+            <legend>المزايا</legend>
+            <div id="features"></div>
+            <button type="button" class="btn" id="add-feature" style="margin-top:12px">+ إضافة ميزة</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>قسم التنزيل</legend>
+            <div class="row">
+              <div><label>العنوان</label><input name="download.title" maxlength="60" /></div>
+              <div><label>الوصف</label><input name="download.subtitle" maxlength="240" /></div>
+            </div>
+            <div class="row">
+              <div><label>ملاحظة نسخة الويب</label><input name="download.webNote" maxlength="200" /></div>
+              <div><label>ملاحظة APK</label><input name="download.apkNote" maxlength="200" /></div>
+            </div>
+            <div class="row">
+              <div><label>رابط نسخة الويب (https)</label><input name="download.webUrl" maxlength="500" placeholder="https://app.example.com" /></div>
+              <div><label>رابط APK (https)</label><input name="download.apkUrl" maxlength="500" placeholder="https://github.com/.../app.apk" /></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>الأسئلة الشائعة</legend>
+            <div id="faq"></div>
+            <button type="button" class="btn" id="add-faq" style="margin-top:12px">+ إضافة سؤال</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>الإعلانات</legend>
+            <div id="ads"></div>
+            <button type="button" class="btn" id="add-ad" style="margin-top:12px">+ إضافة إعلان</button>
+          </fieldset>
+
+          <fieldset>
+            <legend>التذييل</legend>
+            <label>نص الحقوق</label>
+            <input name="footer" maxlength="140" />
+          </fieldset>
+        </form>
+
+        <div class="bar">
+          <span class="msg" id="save-msg"></span>
+          <button class="btn primary" id="save">حفظ التغييرات</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const state = { content: null };
+      const ICONS = ["chat", "modes", "files", "image", "speed", "lock"];
+
+      function field(labelText, value, max, name, multiline) {
+        const wrap = document.createElement("div");
+        const label = document.createElement("label");
+        label.textContent = labelText;
+        const input = document.createElement(multiline ? "textarea" : "input");
+        if (name) input.name = name;
+        input.maxLength = max;
+        input.value = value ?? "";
+        wrap.append(label, input);
+        return { wrap, input };
+      }
+
+      function renderFeatures(items) {
+        const host = $("features");
+        host.textContent = "";
+        items.forEach((item, index) => {
+          const box = document.createElement("div");
+          box.className = "item";
+          const head = document.createElement("div");
+          head.className = "item-head";
+          const title = document.createElement("b");
+          title.textContent = `ميزة ${index + 1}`;
+          const del = document.createElement("button");
+          del.type = "button";
+          del.className = "del";
+          del.textContent = "حذف";
+          del.onclick = () => { items.splice(index, 1); renderFeatures(items); };
+          head.append(title, del);
+
+          const row = document.createElement("div");
+          row.className = "row";
+          const iconSelect = document.createElement("select");
+          iconSelect.style.cssText = "background:#0a1020;color:#e9eefb;border:1px solid rgba(120,160,220,.2);border-radius:10px;padding:10px;font:inherit";
+          for (const icon of ICONS) {
+            const option = document.createElement("option");
+            option.value = icon; option.textContent = icon; option.selected = icon === item.icon;
+            iconSelect.append(option);
+          }
+          iconSelect.onchange = () => { item.icon = iconSelect.value; };
+          const iconWrap = document.createElement("div");
+          const iconLabel = document.createElement("label");
+          iconLabel.textContent = "الأيقونة";
+          iconWrap.append(iconLabel, iconSelect);
+
+          const titleField = field("العنوان", item.title, 60, null, false);
+          titleField.input.oninput = () => { item.title = titleField.input.value; };
+
+          const textField = field("الوصف", item.text, 220, null, true);
+          textField.input.oninput = () => { item.text = textField.input.value; };
+
+          row.append(iconWrap, titleField.wrap);
+          box.append(head, row, textField.wrap);
+          host.append(box);
+        });
+      }
+
+      function renderFaq(items) {
+        const host = $("faq");
+        host.textContent = "";
+        items.forEach((item, index) => {
+          const box = document.createElement("div");
+          box.className = "item";
+          const head = document.createElement("div");
+          head.className = "item-head";
+          const title = document.createElement("b");
+          title.textContent = `سؤال ${index + 1}`;
+          const del = document.createElement("button");
+          del.type = "button";
+          del.className = "del";
+          del.textContent = "حذف";
+          del.onclick = () => { items.splice(index, 1); renderFaq(items); };
+          head.append(title, del);
+
+          const q = field("السؤال", item.q, 120, null, false);
+          q.input.oninput = () => { item.q = q.input.value; };
+          const a = field("الجواب", item.a, 400, null, true);
+          a.input.oninput = () => { item.a = a.input.value; };
+          box.append(head, q.wrap, a.wrap);
+          host.append(box);
+        });
+      }
+
+      function renderAds(items) {
+        const host = $("ads");
+        host.textContent = "";
+        items.forEach((item, index) => {
+          const box = document.createElement("div");
+          box.className = "item";
+          const head = document.createElement("div");
+          head.className = "item-head";
+          const title = document.createElement("b");
+          title.textContent = `إعلان ${index + 1}`;
+          const del = document.createElement("button");
+          del.type = "button";
+          del.className = "del";
+          del.textContent = "حذف";
+          del.onclick = () => { items.splice(index, 1); renderAds(items); };
+          head.append(title, del);
+
+          const t = field("العنوان", item.title, 80, null, false);
+          t.input.oninput = () => { item.title = t.input.value; };
+          const b = field("النص", item.body, 280, null, true);
+          b.input.oninput = () => { item.body = b.input.value; };
+          const c = field("نص الزر", item.ctaLabel, 40, null, false);
+          c.input.oninput = () => { item.ctaLabel = c.input.value; };
+          const u = field("رابط الزر (https)", item.ctaUrl, 500, null, false);
+          u.input.oninput = () => { item.ctaUrl = u.input.value; };
+
+          const toneWrap = document.createElement("div");
+          const toneLabel = document.createElement("label"); toneLabel.textContent = "النبرة";
+          const toneSelect = document.createElement("select");
+          toneSelect.style.cssText = "background:#0a1020;color:#e9eefb;border:1px solid rgba(120,160,220,.2);border-radius:10px;padding:10px;font:inherit;width:100%";
+          for (const tone of ["info", "warning", "success"]) {
+            const option = document.createElement("option");
+            option.value = tone; option.textContent = tone; option.selected = tone === item.tone;
+            toneSelect.append(option);
+          }
+          toneSelect.onchange = () => { item.tone = toneSelect.value; };
+          toneWrap.append(toneLabel, toneSelect);
+
+          const enabledWrap = document.createElement("div");
+          const enabledLabel = document.createElement("label"); enabledLabel.textContent = "مفعّل";
+          const enabledInput = document.createElement("input");
+          enabledInput.type = "checkbox"; enabledInput.checked = item.enabled !== false;
+          enabledInput.onchange = () => { item.enabled = enabledInput.checked; };
+          enabledWrap.append(enabledLabel, enabledInput);
+
+          box.append(head, t.wrap, b.wrap, c.wrap, u.wrap, toneWrap, enabledWrap);
+          host.append(box);
+        });
+      }
+
+      function fill(content) {
+        state.content = JSON.parse(JSON.stringify(content));
+        const scope = (name) => document.querySelector(`[name="${name}"]`);
+        const set = (name, value) => { const el = scope(name); if (el) el.value = value ?? ""; };
+        set("brand", content.brand);
+        set("hero.badge", content.hero.badge);
+        set("hero.title", content.hero.title);
+        set("hero.subtitle", content.hero.subtitle);
+        set("hero.hint", content.hero.hint);
+        set("download.title", content.download.title);
+        set("download.subtitle", content.download.subtitle);
+        set("download.webNote", content.download.webNote);
+        set("download.apkNote", content.download.apkNote);
+        set("download.webUrl", content.download.webUrl);
+        set("download.apkUrl", content.download.apkUrl);
+        set("footer", content.footer);
+        state.content.ads = Array.isArray(state.content.ads) ? state.content.ads : [];
+        renderFeatures(state.content.features);
+        renderFaq(state.content.faq);
+        renderAds(state.content.ads);
+      }
+
+      async function load() {
+        const response = await fetch("/api/content", { headers: { accept: "application/json" } });
+        if (response.status === 401) { showGate(); return; }
+        const data = await response.json();
+        if (!data.owner) { showGate(); return; }
+        fill(data.content);
+        $("gate").classList.add("hidden");
+        $("editor").classList.remove("hidden");
+      }
+
+      function showGate() {
+        $("editor").classList.add("hidden");
+        $("gate").classList.remove("hidden");
+      }
+
+      async function collect() {
+        const content = state.content;
+        const val = (name) => document.querySelector(`[name="${name}"]`)?.value ?? "";
+        content.brand = val("brand");
+        content.hero.badge = val("hero.badge");
+        content.hero.title = val("hero.title");
+        content.hero.subtitle = val("hero.subtitle");
+        content.hero.hint = val("hero.hint");
+        content.download.title = val("download.title");
+        content.download.subtitle = val("download.subtitle");
+        content.download.webNote = val("download.webNote");
+        content.download.apkNote = val("download.apkNote");
+        content.download.webUrl = val("download.webUrl");
+        content.download.apkUrl = val("download.apkUrl");
+        content.footer = val("footer");
+        return content;
+      }
+
+      async function exchangeOwnerLink() {
+        const url = new URL(location.href);
+        const token = url.searchParams.get("owner_token");
+        if (!token) return;
+        url.searchParams.delete("owner_token");
+        history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+        const response = await fetch("/api/admin/exchange", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ token }),
+        });
+        if (!response.ok) {
+          $("gate-msg").textContent = "رابط المالك منتهي أو غير صالح. افتح المحرر من لوحة المالك من جديد.";
+        }
+      }
+
+      $("save").onclick = async () => {
+        $("save-msg").textContent = "جارٍ الحفظ…";
+        const response = await fetch("/api/content", {
+          method: "PUT",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(await collect()),
+        });
+        if (response.ok) {
+          $("save-msg").textContent = "تم الحفظ ✓";
+          $("save-msg").className = "msg ok";
+        } else if (response.status === 401) {
+          $("save-msg").textContent = "انتهت الجلسة — افتح المحرر من لوحة المالك.";
+          $("save-msg").className = "msg bad";
+          showGate();
+        } else {
+          $("save-msg").textContent = "تعذّر الحفظ — تحقّق من الروابط (https فقط) وحاول مجددًا.";
+          $("save-msg").className = "msg bad";
+        }
+      };
+
+      $("add-feature").onclick = () => {
+        if (state.content.features.length >= 9) return;
+        state.content.features.push({ icon: "chat", title: "ميزة جديدة", text: "" });
+        renderFeatures(state.content.features);
+      };
+      $("add-faq").onclick = () => {
+        if (state.content.faq.length >= 10) return;
+        state.content.faq.push({ q: "سؤال جديد", a: "" });
+        renderFaq(state.content.faq);
+      };
+      $("add-ad").onclick = () => {
+        if (state.content.ads.length >= 6) return;
+        state.content.ads.push({ id: "", title: "إعلان جديد", body: "", ctaLabel: "", ctaUrl: "", tone: "info", enabled: true });
+        renderAds(state.content.ads);
+      };
+      $("logout").onclick = async () => { await fetch("/api/logout", { method: "POST" }); showGate(); };
+
+      exchangeOwnerLink()
+        .then(load)
+        .catch(() => {
+          $("gate-msg").textContent = "تعذّر فتح الجلسة. افتح المحرر من لوحة المالك من جديد.";
+          showGate();
+        });
+    </script>
+  </body>
+</html>

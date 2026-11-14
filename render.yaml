@@ -1,0 +1,35 @@
+# ZENOX on Render — free demo option.
+#
+# Render's free web-service plan has NO persistent disk and sleeps after
+# inactivity, so uploads/chat history reset on every redeploy or cold start.
+# Use it to try ZENOX without a card; for permanent storage use the VPS +
+# Docker + DuckDNS path in deploy/FREE-HOSTING.md.
+#
+# The app is a long-running Node server (owner shell, uploads, chat logs), so
+# it needs a container host, not a serverless/edge platform.
+services:
+  - type: web
+    name: zenox
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: frankfurt
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: ZENOX_DATA_DIR
+        value: /data
+      - key: JWT_SECRET
+        generateValue: true
+      - key: OWNER_SESSION_HOURS
+        value: 720
+      # Groq is the fastest free provider; Gemini is the fallback.
+      - key: ZENOX_LLM_PREFER
+        value: groq
+      # Add provider keys in the Render dashboard (Environment → Secret Files
+      # or Environment Variables), never in this file:
+      #   GROQ_API_KEY, GEMINI_API_KEY
